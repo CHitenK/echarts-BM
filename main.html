@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9; IE=EDGE" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,initial-scale=1.0,maximun-scale=1.0,minimun-scale= 1.0,user-scalable=0">
+    <meta name="keywords" content=" " />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no"/>
+    <title>test</title>
+</head>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=s3Qb0HQAj08Lci6HC952xqQ019ZBx07B"></script>
+<body>
+    <div id="main" style="width: 100%;height: 500px;"></div>
+</body>
+<script>
+    window.onload = function () {
+        var map = new BMap.Map("main");    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(113.261503,23.131377), 12);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);
+        map.addEventListener("click",function(e){
+            console.log(e.point.lng + "," + e.point.lat);
+        });
+    }
+</script>
+</html>
